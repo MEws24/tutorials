@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ws23tutorial_lab1:Factory
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ws23tutorial_lab1="http://www.example.org/ws23tutorial_lab1"
+    xsi:schemaLocation="http://www.example.org/ws23tutorial_lab1 ws23tutorial_lab1.ecore"
+    name="HammerFactory">
+  <item xsi:type="ws23tutorial_lab1:SimpleItem"
+      name="HammerHandle"
+      material="STEEL">
+    <shape xsi:type="ws23tutorial_lab1:Cylinder"
+        height="10.0"
+        radius="2.0"/>
+  </item>
+  <item xsi:type="ws23tutorial_lab1:SimpleItem"
+      name="HammerHead">
+    <shape xsi:type="ws23tutorial_lab1:Block"
+        height="10.0"
+        length="4.0"
+        width="6.0"/>
+  </item>
+  <item xsi:type="ws23tutorial_lab1:ComplexItem"
+      name="Hammer">
+    <component
+        item="//@item.0"/>
+    <component
+        item="//@item.1"/>
+  </item>
+</ws23tutorial_lab1:Factory>

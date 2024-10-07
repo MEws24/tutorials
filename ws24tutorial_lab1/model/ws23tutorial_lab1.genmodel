@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ws23tutorial_lab1/src-gen" creationIcons="false"
+    editDirectory="/ws23tutorial_lab1.edit/src-gen" editorDirectory="/ws23tutorial_lab1.editor/src-gen"
+    modelPluginID="ws23tutorial_lab1" modelName="Ws23tutorial_lab1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ws23tutorial_lab1.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Ws23tutorial_lab1" disposableProviderFactory="true" ecorePackage="ws23tutorial_lab1.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ws23tutorial_lab1.ecore#//Material">
+      <genEnumLiterals ecoreEnumLiteral="ws23tutorial_lab1.ecore#//Material/WOOD"/>
+      <genEnumLiterals ecoreEnumLiteral="ws23tutorial_lab1.ecore#//Material/STEEL"/>
+      <genEnumLiterals ecoreEnumLiteral="ws23tutorial_lab1.ecore#//Material/COPPER"/>
+    </genEnums>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Factory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ws23tutorial_lab1.ecore#//Factory/item"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Factory/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Factory/country"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Item/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//ComplexItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ws23tutorial_lab1.ecore#//ComplexItem/component"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//SimpleItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//SimpleItem/material"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ws23tutorial_lab1.ecore#//SimpleItem/color"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ws23tutorial_lab1.ecore#//SimpleItem/shape"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Color">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Color/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Color/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Color/blue"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Shape">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Shape/height"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Cylinder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Cylinder/radius"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Block">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Block/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Block/width"/>
+    </genClasses>
+    <genClasses ecoreClass="ws23tutorial_lab1.ecore#//Component">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ws23tutorial_lab1.ecore#//Component/item"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ws23tutorial_lab1.ecore#//Component/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
