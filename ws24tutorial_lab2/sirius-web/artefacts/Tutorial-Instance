@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<factory:Factory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:factory="domain://factory" name="HammerFactory">
+  <items xmi:type="factory:HammerHead" name="HeadItem">
+    <shape xmi:type="factory:Block" height="20" width="40" length="20"/>
+    <color name="Silver"/>
+    <material xmi:type="factory:STEEL"/>
+  </items>
+  <items xmi:type="factory:HammerHandle" name="HandleItem">
+    <shape xmi:type="factory:Cylinder" height="20" radius="5"/>
+    <color name="Brown"/>
+    <material xmi:type="factory:WOOD"/>
+  </items>
+  <items xmi:type="factory:ComplexItem" name="Hammer">
+    <components name="C1" item="//@items.1"/>
+    <components name="C2" item="//@items.0"/>
+    <itemConnections src="//@items.2/@components.1" dest="//@items.2/@components.0"/>
+  </items>
+  <items xmi:type="factory:HammerHead" name="Head2">
+    <color name="Gold"/>
+  </items>
+  <items xmi:type="factory:HammerHandle" name="Handle2"/>
+  <items xmi:type="factory:ComplexItem" name="Hammer2">
+    <components name="C3" item="//@items.3"/>
+  </items>
+</factory:Factory>

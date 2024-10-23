@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/sirius-web/domain" name="factory">
+  <types name="Factory">
+    <attributes name="name"/>
+    <relations name="items" many="true" containment="true" targetType="//@types.1"/>
+  </types>
+  <types name="Item" abstract="true">
+    <attributes name="name"/>
+    <relations name="markers" optional="false" many="true" containment="true" targetType="//@types.9"/>
+  </types>
+  <types name="Shape" abstract="true">
+    <attributes name="height" type="NUMBER"/>
+  </types>
+  <types name="Cylinder" superTypes="//@types.2">
+    <attributes name="radius" type="NUMBER"/>
+  </types>
+  <types name="Block" superTypes="//@types.2">
+    <attributes name="width" type="NUMBER"/>
+    <attributes name="length" type="NUMBER"/>
+  </types>
+  <types name="Color">
+    <attributes name="name"/>
+  </types>
+  <types name="Material" abstract="true"/>
+  <types name="WOOD" superTypes="//@types.6"/>
+  <types name="STEEL" superTypes="//@types.6"/>
+  <types name="Marker">
+    <attributes name="name"/>
+  </types>
+  <types name="ItemConnection">
+    <relations name="src" optional="false" targetType="//@types.13"/>
+    <relations name="dest" optional="false" targetType="//@types.13"/>
+  </types>
+  <types name="ComplexItem" superTypes="//@types.1">
+    <relations name="components" optional="false" many="true" containment="true" targetType="//@types.13"/>
+    <relations name="itemConnections" optional="false" many="true" containment="true" targetType="//@types.10"/>
+  </types>
+  <types name="BasicItem" superTypes="//@types.1" abstract="true">
+    <relations name="shape" optional="false" containment="true" targetType="//@types.2"/>
+    <relations name="color" optional="false" containment="true" targetType="//@types.5"/>
+    <relations name="material" optional="false" containment="true" targetType="//@types.6"/>
+  </types>
+  <types name="Component">
+    <attributes name="name"/>
+    <relations name="item" optional="false" targetType="//@types.1"/>
+  </types>
+  <types name="HammerHandle" superTypes="//@types.12"/>
+  <types name="HammerHead" superTypes="//@types.12"/>
+</domain:Domain>
