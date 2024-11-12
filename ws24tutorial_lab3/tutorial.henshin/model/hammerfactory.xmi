@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tutorial:Factory
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tutorial="http://www.example.org/tutorial"
+    xsi:schemaLocation="http://www.example.org/tutorial ../metamodel/tutorial.ecore"
+    name="HammerFactory">
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHandle">
+    <markers
+        name="Head Connection Point"/>
+    <shape xsi:type="tutorial:CylinderShape"
+        length="9.0"
+        radius="5.0"/>
+    <color name="Brown"
+        red="3"
+        green="2"
+        blue="1"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHead"
+      material="STEEL">
+    <markers
+        name="Handle Connection Point"/>
+    <shape xsi:type="tutorial:BlockShape"
+        length="4.0"
+        width="2.0"
+        heigth="3.0"/>
+    <color name="Grey"
+        red="5"
+        green="9"
+        blue="8"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:ComplexItemType"
+      name="Hammer">
+    <components
+        name="Hammer Handle"
+        itemType="//@itemTypes.0"/>
+    <components
+        name="Hammer Head"
+        itemType="//@itemTypes.1"/>
+    <itemConnections
+        componentA="//@itemTypes.2/@components.0"
+        componentB="//@itemTypes.2/@components.1"
+        markerA="//@itemTypes.0/@markers.0"
+        markerB="//@itemTypes.1/@markers.0"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:ComplexItemType"
+      name="Hammer2">
+    <components
+        name="Hammer Handle 2"
+        itemType="//@itemTypes.4"/>
+    <components
+        name="Hammer Head 2"
+        itemType="//@itemTypes.5"/>
+    <itemConnections
+        componentA="//@itemTypes.3/@components.0"
+        componentB="//@itemTypes.3/@components.1"
+        markerA="//@itemTypes.0/@markers.0"
+        markerB="//@itemTypes.1/@markers.0"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHandle2">
+    <markers
+        name="Head Connection Point"/>
+    <shape xsi:type="tutorial:CylinderShape"
+        length="12.0"
+        radius="1.0"/>
+    <color name="Brown"
+        red="3"
+        green="2"
+        blue="1"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHead2"
+      material="STEEL">
+    <markers
+        name="Handle Connection Point"/>
+    <shape xsi:type="tutorial:BlockShape"
+        length="4.0"
+        width="2.0"
+        heigth="3.0"/>
+    <color name="Grey"
+        red="5"
+        green="9"
+        blue="8"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:ComplexItemType"
+      name="Hammer3">
+    <components
+        name="Hammer Handle 2"
+        itemType="//@itemTypes.7"/>
+    <components
+        name="Hammer Head 2"
+        itemType="//@itemTypes.8"/>
+    <itemConnections
+        componentA="//@itemTypes.6/@components.0"
+        componentB="//@itemTypes.6/@components.1"
+        markerA="//@itemTypes.0/@markers.0"
+        markerB="//@itemTypes.1/@markers.0"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHandle3">
+    <markers
+        name="Head Connection Point"/>
+    <shape xsi:type="tutorial:CylinderShape"
+        length="12.0"
+        radius="1.0"/>
+    <color name="Brown"
+        red="3"
+        green="2"
+        blue="1"/>
+  </itemTypes>
+  <itemTypes
+      xsi:type="tutorial:BasicItemType"
+      name="HammerHead3"
+      material="STEEL">
+    <markers
+        name="Handle Connection Point"/>
+    <shape xsi:type="tutorial:BlockShape"
+        length="4.0"
+        width="2.0"
+        heigth="3.0"/>
+    <color name="Grey"
+        red="5"
+        green="9"
+        blue="8"/>
+  </itemTypes>
+</tutorial:Factory>

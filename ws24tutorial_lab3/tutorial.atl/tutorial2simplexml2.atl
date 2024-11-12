@@ -1,0 +1,74 @@
+-- @path TUTORIAL=/tutorial.atl/metamodels/tutorial.ecore
+-- @path SXML=/tutorial.atl/metamodels/simplexml.ecore
+
+
+
+module tutorial2simplexml;
+create OUT : SXML from IN : TUTORIAL;
+
+rule Factory2Document {
+	from
+		factory : TUTORIAL!Factory
+	to 
+		doc : SXML!Document (
+			name <- factory.name + '.xml',
+			root <- rootelem
+		),
+		rootelem : SXML!Element (
+			name <- 'factory',
+			elements <- factory.itemTypes
+		)		
+}
+
+abstract rule ItemType2Element {
+	from
+		it : TUTORIAL!ItemType
+	to
+		e : SXML!Element (
+			name <- it.name
+		)
+}
+
+rule BasicItemType2Element extends ItemType2Element {
+	from
+		it : TUTORIAL!BasicItemType
+	to
+		e : SXML!Element (
+			attributes <- thisModule.createAttribute('material', it.material)
+		)
+}
+
+rule ComplexItemType2Element extends ItemType2Element {
+	from
+		it : TUTORIAL!ComplexItemType
+	to
+		e : SXML!Element (
+			elements <- it.components
+		)
+}
+
+rule Component2Element {
+	from
+		c : TUTORIAL!Component
+	to
+		e : SXML!Element (
+			name <- thisModule.componentStringify(c)
+		)
+}
+
+rule createAttribute(name: String, value: OclAny) {
+	to
+		attribute : SXML!Attribute (
+			name <- name,
+			value <- value.toString()
+		)
+	do {
+		attribute;
+	}
+}
+
+helper context TUTORIAL!Component def : stringify() : String =
+	self.name + '(' + self.itemType.name + ')' ;
+
+helper def : componentStringify(component: TUTORIAL!Component) : String = 
+	component.name + '(' + component.itemType.name + ')' ;

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_GRIN0Ci0EeuXEdsFXgHy1A" description="s">
+  <imports href="../metamodel/tutorial.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_XrKbwCi0EeuXEdsFXgHy1A" name="transformBasicWoodItemToGold">
+    <parameters xmi:id="_bfXm8I65Ee69Y6IvZ_e8Zw" name="item" kind="OUT"/>
+    <lhs xmi:id="_XrLp4Ci0EeuXEdsFXgHy1A" name="Lhs">
+      <nodes xmi:id="_fL8FkCi0EeuXEdsFXgHy1A" name="item">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+        <attributes xmi:id="_jnTdoCi0EeuXEdsFXgHy1A" value="&quot;WOOD&quot;">
+          <type href="../metamodel/tutorial.ecore#//BasicItemType/material"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_XrLp4Si0EeuXEdsFXgHy1A" name="Rhs">
+      <nodes xmi:id="_fL8soCi0EeuXEdsFXgHy1A" name="item">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+        <attributes xmi:id="_jnUEsCi0EeuXEdsFXgHy1A" value="&quot;GOLD&quot;">
+          <type href="../metamodel/tutorial.ecore#//BasicItemType/material"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_fL9TsCi0EeuXEdsFXgHy1A" origin="_fL8FkCi0EeuXEdsFXgHy1A" image="_fL8soCi0EeuXEdsFXgHy1A"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="____KoHBYEe2jdIKolRoCNw" name="deleteCylindricalBasicItems">
+    <lhs xmi:id="_AAA_0HBZEe2jdIKolRoCNw" name="Lhs">
+      <nodes xmi:id="_V0TLgHBZEe2jdIKolRoCNw" incoming="_HBgFkHBZEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//CylinderShape"/>
+      </nodes>
+      <nodes xmi:id="_ER0zQHBZEe2jdIKolRoCNw" incoming="_7pqiMI7PEe69Y6IvZ_e8Zw" outgoing="_HBgFkHBZEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+      </nodes>
+      <nodes xmi:id="_6_CQ0I7PEe69Y6IvZ_e8Zw" outgoing="_7pqiMI7PEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory"/>
+      </nodes>
+      <edges xmi:id="_HBgFkHBZEe2jdIKolRoCNw" source="_ER0zQHBZEe2jdIKolRoCNw" target="_V0TLgHBZEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType/shape"/>
+      </edges>
+      <edges xmi:id="_7pqiMI7PEe69Y6IvZ_e8Zw" source="_6_CQ0I7PEe69Y6IvZ_e8Zw" target="_ER0zQHBZEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//Factory/itemTypes"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_AAA_0XBZEe2jdIKolRoCNw" name="Rhs">
+      <nodes xmi:id="_6_FUII7PEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_6_FUIY7PEe69Y6IvZ_e8Zw" origin="_6_CQ0I7PEe69Y6IvZ_e8Zw" image="_6_FUII7PEe69Y6IvZ_e8Zw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_PQ3ccHCVEe2jdIKolRoCNw" name="deleteComponentsofComplexItem">
+    <lhs xmi:id="_PQ54sHCVEe2jdIKolRoCNw" name="Lhs">
+      <nodes xmi:id="_QxMmwHCVEe2jdIKolRoCNw" incoming="_cQ0rwHCVEe2jdIKolRoCNw _-_PyoHCVEe2jdIKolRoCNw" outgoing="_yiAO0HCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//Component"/>
+      </nodes>
+      <nodes xmi:id="_ZgsGcHCVEe2jdIKolRoCNw" outgoing="_cQ0rwHCVEe2jdIKolRoCNw _hc8LUHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemConnection"/>
+      </nodes>
+      <nodes xmi:id="_f3fQcHCVEe2jdIKolRoCNw" incoming="_hc8LUHCVEe2jdIKolRoCNw __P76AHCVEe2jdIKolRoCNw" outgoing="_tvapkHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//Component"/>
+      </nodes>
+      <nodes xmi:id="_p44c4HCVEe2jdIKolRoCNw" incoming="_tvapkHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemType"/>
+      </nodes>
+      <nodes xmi:id="_x2ksMHCVEe2jdIKolRoCNw" incoming="_yiAO0HCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemType"/>
+      </nodes>
+      <nodes xmi:id="_-ckjYHCVEe2jdIKolRoCNw" outgoing="_-_PyoHCVEe2jdIKolRoCNw __P76AHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ComplexItemType"/>
+      </nodes>
+      <edges xmi:id="_cQ0rwHCVEe2jdIKolRoCNw" source="_ZgsGcHCVEe2jdIKolRoCNw" target="_QxMmwHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemConnection/componentA"/>
+      </edges>
+      <edges xmi:id="_hc8LUHCVEe2jdIKolRoCNw" source="_ZgsGcHCVEe2jdIKolRoCNw" target="_f3fQcHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemConnection/componentB"/>
+      </edges>
+      <edges xmi:id="_tvapkHCVEe2jdIKolRoCNw" source="_f3fQcHCVEe2jdIKolRoCNw" target="_p44c4HCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//Component/itemType"/>
+      </edges>
+      <edges xmi:id="_yiAO0HCVEe2jdIKolRoCNw" source="_QxMmwHCVEe2jdIKolRoCNw" target="_x2ksMHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//Component/itemType"/>
+      </edges>
+      <edges xmi:id="_-_PyoHCVEe2jdIKolRoCNw" source="_-ckjYHCVEe2jdIKolRoCNw" target="_QxMmwHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ComplexItemType/components"/>
+      </edges>
+      <edges xmi:id="__P76AHCVEe2jdIKolRoCNw" source="_-ckjYHCVEe2jdIKolRoCNw" target="_f3fQcHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ComplexItemType/components"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_PQ54sXCVEe2jdIKolRoCNw" name="Rhs">
+      <nodes xmi:id="_at4SUHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemConnection"/>
+      </nodes>
+      <nodes xmi:id="_sc__cHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemType"/>
+      </nodes>
+      <nodes xmi:id="_x2l6UHCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ItemType"/>
+      </nodes>
+      <nodes xmi:id="_-ckjYXCVEe2jdIKolRoCNw">
+        <type href="../metamodel/tutorial.ecore#//ComplexItemType"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_at4SUXCVEe2jdIKolRoCNw" origin="_ZgsGcHCVEe2jdIKolRoCNw" image="_at4SUHCVEe2jdIKolRoCNw"/>
+    <mappings xmi:id="_sc__cXCVEe2jdIKolRoCNw" origin="_p44c4HCVEe2jdIKolRoCNw" image="_sc__cHCVEe2jdIKolRoCNw"/>
+    <mappings xmi:id="_x2l6UXCVEe2jdIKolRoCNw" origin="_x2ksMHCVEe2jdIKolRoCNw" image="_x2l6UHCVEe2jdIKolRoCNw"/>
+    <mappings xmi:id="_-ckjYnCVEe2jdIKolRoCNw" origin="_-ckjYHCVEe2jdIKolRoCNw" image="_-ckjYXCVEe2jdIKolRoCNw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_rSuycHCaEe2jdIKolRoCNw" name="deleteAllComponents">
+    <lhs xmi:id="_rSuycXCaEe2jdIKolRoCNw" name="Lhs"/>
+    <rhs xmi:id="_rSuyfnCaEe2jdIKolRoCNw" name="Rhs"/>
+    <multiRules xmi:id="_x-BlwHCaEe2jdIKolRoCNw">
+      <lhs xmi:id="_x-Cz4HCaEe2jdIKolRoCNw" name="Lhs">
+        <nodes xmi:id="_rSuycnCaEe2jdIKolRoCNw" incoming="_rSuyeHCaEe2jdIKolRoCNw _rSuyfHCaEe2jdIKolRoCNw" outgoing="_rSuye3CaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//Component"/>
+        </nodes>
+        <nodes xmi:id="_rSuyc3CaEe2jdIKolRoCNw" outgoing="_rSuyeHCaEe2jdIKolRoCNw _rSuyeXCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemConnection"/>
+        </nodes>
+        <nodes xmi:id="_rSuyd3CaEe2jdIKolRoCNw" outgoing="_rSuyfHCaEe2jdIKolRoCNw _rSuyfXCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ComplexItemType"/>
+        </nodes>
+        <nodes xmi:id="_rSuydnCaEe2jdIKolRoCNw" incoming="_rSuye3CaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemType"/>
+        </nodes>
+        <nodes xmi:id="_rSuydHCaEe2jdIKolRoCNw" incoming="_rSuyeXCaEe2jdIKolRoCNw _rSuyfXCaEe2jdIKolRoCNw" outgoing="_rSuyenCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//Component"/>
+        </nodes>
+        <nodes xmi:id="_rSuydXCaEe2jdIKolRoCNw" incoming="_rSuyenCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemType"/>
+        </nodes>
+        <edges xmi:id="_rSuyfHCaEe2jdIKolRoCNw" source="_rSuyd3CaEe2jdIKolRoCNw" target="_rSuycnCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ComplexItemType/components"/>
+        </edges>
+        <edges xmi:id="_rSuyfXCaEe2jdIKolRoCNw" source="_rSuyd3CaEe2jdIKolRoCNw" target="_rSuydHCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ComplexItemType/components"/>
+        </edges>
+        <edges xmi:id="_rSuyeHCaEe2jdIKolRoCNw" source="_rSuyc3CaEe2jdIKolRoCNw" target="_rSuycnCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemConnection/componentA"/>
+        </edges>
+        <edges xmi:id="_rSuye3CaEe2jdIKolRoCNw" source="_rSuycnCaEe2jdIKolRoCNw" target="_rSuydnCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//Component/itemType"/>
+        </edges>
+        <edges xmi:id="_rSuyeXCaEe2jdIKolRoCNw" source="_rSuyc3CaEe2jdIKolRoCNw" target="_rSuydHCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemConnection/componentB"/>
+        </edges>
+        <edges xmi:id="_rSuyenCaEe2jdIKolRoCNw" source="_rSuydHCaEe2jdIKolRoCNw" target="_rSuydXCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//Component/itemType"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_x-Cz4XCaEe2jdIKolRoCNw" name="Rhs">
+        <nodes xmi:id="_rSuyf3CaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemConnection"/>
+        </nodes>
+        <nodes xmi:id="_rSuygHCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemType"/>
+        </nodes>
+        <nodes xmi:id="_rSuygXCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ItemType"/>
+        </nodes>
+        <nodes xmi:id="_rSuygnCaEe2jdIKolRoCNw">
+          <type href="../metamodel/tutorial.ecore#//ComplexItemType"/>
+        </nodes>
+      </rhs>
+      <mappings xmi:id="_rSuyhnCaEe2jdIKolRoCNw" origin="_rSuyd3CaEe2jdIKolRoCNw" image="_rSuygnCaEe2jdIKolRoCNw"/>
+      <mappings xmi:id="_rSuyg3CaEe2jdIKolRoCNw" origin="_rSuyc3CaEe2jdIKolRoCNw" image="_rSuyf3CaEe2jdIKolRoCNw"/>
+      <mappings xmi:id="_rSuyhHCaEe2jdIKolRoCNw" origin="_rSuydXCaEe2jdIKolRoCNw" image="_rSuygHCaEe2jdIKolRoCNw"/>
+      <mappings xmi:id="_rSuyhXCaEe2jdIKolRoCNw" origin="_rSuydnCaEe2jdIKolRoCNw" image="_rSuygXCaEe2jdIKolRoCNw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_oBg0sI7AEe69Y6IvZ_e8Zw" name="cloneBasicItemType">
+    <parameters xmi:id="_rNxqcI7CEe69Y6IvZ_e8Zw" name="item" kind="OUT">
+      <type xsi:type="ecore:EClass" href="../metamodel/tutorial.ecore#//BasicItemType"/>
+    </parameters>
+    <parameters xmi:id="_MURcII7BEe69Y6IvZ_e8Zw" name="name" kind="VAR"/>
+    <parameters xmi:id="_MURcIY7BEe69Y6IvZ_e8Zw" name="len" kind="VAR"/>
+    <parameters xmi:id="_MURcIo7BEe69Y6IvZ_e8Zw" name="rad" kind="VAR"/>
+    <lhs xmi:id="_oBlGII7AEe69Y6IvZ_e8Zw" name="Lhs">
+      <nodes xmi:id="_H8I-QI7BEe69Y6IvZ_e8Zw" outgoing="_U1KfII7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory"/>
+      </nodes>
+      <nodes xmi:id="_QrpsEI7BEe69Y6IvZ_e8Zw" incoming="_U1KfII7BEe69Y6IvZ_e8Zw" outgoing="_VIaLQI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+        <attributes xmi:id="_W-b4wI7BEe69Y6IvZ_e8Zw" value="name">
+          <type href="../metamodel/tutorial.ecore#//ItemType/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RgvhAI7BEe69Y6IvZ_e8Zw" incoming="_VIaLQI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//CylinderShape"/>
+        <attributes xmi:id="_cD2TYI7BEe69Y6IvZ_e8Zw" value="len">
+          <type href="../metamodel/tutorial.ecore#//Shape/length"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_U1KfII7BEe69Y6IvZ_e8Zw" source="_H8I-QI7BEe69Y6IvZ_e8Zw" target="_QrpsEI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory/itemTypes"/>
+      </edges>
+      <edges xmi:id="_VIaLQI7BEe69Y6IvZ_e8Zw" source="_QrpsEI7BEe69Y6IvZ_e8Zw" target="_RgvhAI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType/shape"/>
+      </edges>
+      <formula xsi:type="henshin:NestedCondition" xmi:id="_n2QfkI7DEe69Y6IvZ_e8Zw">
+        <conclusion xmi:id="_n2QfkY7DEe69Y6IvZ_e8Zw">
+          <nodes xmi:id="_n2Qfko7DEe69Y6IvZ_e8Zw" incoming="_n2RGoY7DEe69Y6IvZ_e8Zw" outgoing="_n2RGpo7DEe69Y6IvZ_e8Zw">
+            <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+            <attributes xmi:id="_n2Qfk47DEe69Y6IvZ_e8Zw" value="name">
+              <type href="../metamodel/tutorial.ecore#//ItemType/name"/>
+            </attributes>
+            <attributes xmi:id="_Xa2vAI7BEe69Y6IvZ_e8Zw" value="WOOD">
+              <type href="../metamodel/tutorial.ecore#//BasicItemType/material"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_n2Qflo7DEe69Y6IvZ_e8Zw" outgoing="_n2RGoY7DEe69Y6IvZ_e8Zw">
+            <type href="../metamodel/tutorial.ecore#//Factory"/>
+          </nodes>
+          <nodes xmi:id="_n2RGoo7DEe69Y6IvZ_e8Zw" incoming="_n2RGpo7DEe69Y6IvZ_e8Zw">
+            <type href="../metamodel/tutorial.ecore#//CylinderShape"/>
+            <attributes xmi:id="_n2RGo47DEe69Y6IvZ_e8Zw" value="rad">
+              <type href="../metamodel/tutorial.ecore#//CylinderShape/radius"/>
+            </attributes>
+            <attributes xmi:id="_n2RGpI7DEe69Y6IvZ_e8Zw" value="len">
+              <type href="../metamodel/tutorial.ecore#//Shape/length"/>
+            </attributes>
+          </nodes>
+          <edges xmi:id="_n2RGoY7DEe69Y6IvZ_e8Zw" source="_n2Qflo7DEe69Y6IvZ_e8Zw" target="_n2Qfko7DEe69Y6IvZ_e8Zw">
+            <type href="../metamodel/tutorial.ecore#//Factory/itemTypes"/>
+          </edges>
+          <edges xmi:id="_n2RGpo7DEe69Y6IvZ_e8Zw" source="_n2Qfko7DEe69Y6IvZ_e8Zw" target="_n2RGoo7DEe69Y6IvZ_e8Zw">
+            <type href="../metamodel/tutorial.ecore#//BasicItemType/shape"/>
+          </edges>
+        </conclusion>
+        <mappings xmi:id="_n2QflY7DEe69Y6IvZ_e8Zw" origin="_QrpsEI7BEe69Y6IvZ_e8Zw" image="_n2Qfko7DEe69Y6IvZ_e8Zw"/>
+        <mappings xmi:id="_n2RGoI7DEe69Y6IvZ_e8Zw" origin="_H8I-QI7BEe69Y6IvZ_e8Zw" image="_n2Qflo7DEe69Y6IvZ_e8Zw"/>
+        <mappings xmi:id="_n2RGpY7DEe69Y6IvZ_e8Zw" origin="_RgvhAI7BEe69Y6IvZ_e8Zw" image="_n2RGoo7DEe69Y6IvZ_e8Zw"/>
+      </formula>
+    </lhs>
+    <rhs xmi:id="_oBlGIY7AEe69Y6IvZ_e8Zw" name="Rhs">
+      <nodes xmi:id="_H8KzcI7BEe69Y6IvZ_e8Zw" outgoing="_U1KfIY7BEe69Y6IvZ_e8Zw _U_2FII7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory"/>
+      </nodes>
+      <nodes xmi:id="_QrpsEY7BEe69Y6IvZ_e8Zw" incoming="_U1KfIY7BEe69Y6IvZ_e8Zw" outgoing="_VIaLQY7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+        <attributes xmi:id="_W-dt8I7BEe69Y6IvZ_e8Zw" value="name">
+          <type href="../metamodel/tutorial.ecore#//ItemType/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_Qy4VcI7BEe69Y6IvZ_e8Zw" name="item" incoming="_U_2FII7BEe69Y6IvZ_e8Zw" outgoing="_VSkM0I7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+        <attributes xmi:id="_Yu-CQI7BEe69Y6IvZ_e8Zw" value="name + '#2'">
+          <type href="../metamodel/tutorial.ecore#//ItemType/name"/>
+        </attributes>
+        <attributes xmi:id="_Y_Or0I7BEe69Y6IvZ_e8Zw" value="GOLD">
+          <type href="../metamodel/tutorial.ecore#//BasicItemType/material"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RgvhAY7BEe69Y6IvZ_e8Zw" incoming="_VIaLQY7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//CylinderShape"/>
+        <attributes xmi:id="_bhvr4I7BEe69Y6IvZ_e8Zw" value="rad">
+          <type href="../metamodel/tutorial.ecore#//CylinderShape/radius"/>
+        </attributes>
+        <attributes xmi:id="_cD2TYY7BEe69Y6IvZ_e8Zw" value="len">
+          <type href="../metamodel/tutorial.ecore#//Shape/length"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RnXGYI7BEe69Y6IvZ_e8Zw" incoming="_VSkM0I7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//CylinderShape"/>
+        <attributes xmi:id="_coDzsI7BEe69Y6IvZ_e8Zw" value="len">
+          <type href="../metamodel/tutorial.ecore#//Shape/length"/>
+        </attributes>
+        <attributes xmi:id="_dAwnkI7BEe69Y6IvZ_e8Zw" value="rad">
+          <type href="../metamodel/tutorial.ecore#//CylinderShape/radius"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_U1KfIY7BEe69Y6IvZ_e8Zw" source="_H8KzcI7BEe69Y6IvZ_e8Zw" target="_QrpsEY7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory/itemTypes"/>
+      </edges>
+      <edges xmi:id="_U_2FII7BEe69Y6IvZ_e8Zw" source="_H8KzcI7BEe69Y6IvZ_e8Zw" target="_Qy4VcI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Factory/itemTypes"/>
+      </edges>
+      <edges xmi:id="_VIaLQY7BEe69Y6IvZ_e8Zw" source="_QrpsEY7BEe69Y6IvZ_e8Zw" target="_RgvhAY7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType/shape"/>
+      </edges>
+      <edges xmi:id="_VSkM0I7BEe69Y6IvZ_e8Zw" source="_Qy4VcI7BEe69Y6IvZ_e8Zw" target="_RnXGYI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType/shape"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_H8KzcY7BEe69Y6IvZ_e8Zw" origin="_H8I-QI7BEe69Y6IvZ_e8Zw" image="_H8KzcI7BEe69Y6IvZ_e8Zw"/>
+    <mappings xmi:id="_QrpsEo7BEe69Y6IvZ_e8Zw" origin="_QrpsEI7BEe69Y6IvZ_e8Zw" image="_QrpsEY7BEe69Y6IvZ_e8Zw"/>
+    <mappings xmi:id="_RgvhAo7BEe69Y6IvZ_e8Zw" origin="_RgvhAI7BEe69Y6IvZ_e8Zw" image="_RgvhAY7BEe69Y6IvZ_e8Zw"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_wDl_UI7BEe69Y6IvZ_e8Zw" name="addColor">
+    <parameters xmi:id="_4ER4QI7BEe69Y6IvZ_e8Zw" name="color" kind="IN"/>
+    <parameters xmi:id="_yNMwII7BEe69Y6IvZ_e8Zw" name="item" kind="OUT">
+      <type xsi:type="ecore:EClass" href="../metamodel/tutorial.ecore#//BasicItemType"/>
+    </parameters>
+    <lhs xmi:id="_wDq30I7BEe69Y6IvZ_e8Zw" name="Lhs">
+      <nodes xmi:id="_zTH2YI7BEe69Y6IvZ_e8Zw" name="item">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_wDq30Y7BEe69Y6IvZ_e8Zw" name="Rhs">
+      <nodes xmi:id="_zTKSoI7BEe69Y6IvZ_e8Zw" name="item" outgoing="_0ZjS8I7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType"/>
+      </nodes>
+      <nodes xmi:id="_z3PQEI7BEe69Y6IvZ_e8Zw" incoming="_0ZjS8I7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//Color"/>
+        <attributes xmi:id="_1zjy0I7BEe69Y6IvZ_e8Zw" value="color">
+          <type href="../metamodel/tutorial.ecore#//Color/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_0ZjS8I7BEe69Y6IvZ_e8Zw" source="_zTKSoI7BEe69Y6IvZ_e8Zw" target="_z3PQEI7BEe69Y6IvZ_e8Zw">
+        <type href="../metamodel/tutorial.ecore#//BasicItemType/color"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_zTKSoY7BEe69Y6IvZ_e8Zw" origin="_zTH2YI7BEe69Y6IvZ_e8Zw" image="_zTKSoI7BEe69Y6IvZ_e8Zw"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_A40QAI7CEe69Y6IvZ_e8Zw" name="cloneBasicItemWithNewColor" subUnits="_oBg0sI7AEe69Y6IvZ_e8Zw _wDl_UI7BEe69Y6IvZ_e8Zw">
+    <parameters xmi:id="_DlcOUI7CEe69Y6IvZ_e8Zw" name="color" kind="IN"/>
+    <parameters xmi:id="_lgyAgI7EEe69Y6IvZ_e8Zw" name="item" kind="OUT"/>
+    <parameterMappings xmi:id="_mRFcEI7EEe69Y6IvZ_e8Zw" source="_lgyAgI7EEe69Y6IvZ_e8Zw" target="_rNxqcI7CEe69Y6IvZ_e8Zw"/>
+    <parameterMappings xmi:id="_mRFcEY7EEe69Y6IvZ_e8Zw" source="_rNxqcI7CEe69Y6IvZ_e8Zw" target="_lgyAgI7EEe69Y6IvZ_e8Zw"/>
+    <parameterMappings xmi:id="_nQmYUI7EEe69Y6IvZ_e8Zw" source="_DlcOUI7CEe69Y6IvZ_e8Zw" target="_4ER4QI7BEe69Y6IvZ_e8Zw"/>
+    <parameterMappings xmi:id="_nQmYUY7EEe69Y6IvZ_e8Zw" source="_4ER4QI7BEe69Y6IvZ_e8Zw" target="_DlcOUI7CEe69Y6IvZ_e8Zw"/>
+    <parameterMappings xmi:id="_nQmYUo7EEe69Y6IvZ_e8Zw" source="_lgyAgI7EEe69Y6IvZ_e8Zw" target="_yNMwII7BEe69Y6IvZ_e8Zw"/>
+    <parameterMappings xmi:id="_nQmYU47EEe69Y6IvZ_e8Zw" source="_yNMwII7BEe69Y6IvZ_e8Zw" target="_lgyAgI7EEe69Y6IvZ_e8Zw"/>
+  </units>
+  <units xsi:type="henshin:LoopUnit" xmi:id="_kyuKMI7QEe69Y6IvZ_e8Zw" name="deleteComponents" subUnit="_PQ3ccHCVEe2jdIKolRoCNw"/>
+  <units xsi:type="henshin:IteratedUnit" xmi:id="_-WffYI7QEe69Y6IvZ_e8Zw" name="deleteIteratedComponent" subUnit="_PQ3ccHCVEe2jdIKolRoCNw" iterations="2"/>
+</henshin:Module>
